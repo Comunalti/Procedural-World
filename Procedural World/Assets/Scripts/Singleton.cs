@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
@@ -11,10 +7,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         get
         {
-            if (instance.Equals(null))
+            if (instance == null)
             {
                 instance = GameObject.FindObjectOfType<T>();
-                if (instance.Equals(null)) Debug.LogError($"No Singleton of type {typeof(T)}");
+                if (instance == null) Debug.LogError($"No Singleton of type {typeof(T)}");
             }
             return instance;
         }
@@ -22,7 +18,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (instance.Equals(null))
+        if (instance == null)
         {
             instance = this as T;
         }
