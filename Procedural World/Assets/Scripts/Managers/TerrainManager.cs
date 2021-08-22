@@ -1,70 +1,94 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Managers
 {
     public class TerrainManager : Singleton<TerrainManager>
     {
+        public Material material;
         private GameObject map;
         public Vector3Int size;
         public Mesh mapMesh;
         public MeshFilter meshFilter;
 
+        public float frequency = 0.4f;
+
+        public Texture2D texture;
+        
         public int[] triangleArray;
         public Vector3[] verticesArray;
+        public int octaveCount = 1;
+
         [ContextMenu("Recreate Mesh")]
         private void ReCreateMesh()
         {
+            float time = Time.time;
             mapMesh = new Mesh();
-            mapMesh.vertices = GetVertices();
-            mapMesh.triangles = GetTriangles();
+            mapMesh.indexFormat = IndexFormat.UInt32;
+            BuildArrays();
+            mapMesh.vertices = verticesArray;
+            mapMesh.triangles = triangleArray;
             mapMesh.RecalculateNormals();
             meshFilter.mesh = mapMesh;
+            print(Time.time - time);
         }
 
-        private int[] GetTriangles()
+
+        private void BuildArrays()
         {
-            triangleArray = new int[size.x * size.z * 6];
+            var verticesList = new List<Vector3>();
+            var trianglesList = new List<int>();
+            texture = new Texture2D(size.x, size.z);
+            texture.filterMode = FilterMode.Point;
+            texture.anisoLevel = 0;
             for (int x = 0; x < size.x; x++)
             {
-                for (int z = 0; z < size.y; z++)
+                for (int z = 0; z < size.z; z++)
                 {
-                    FillVerticesTriangle(triangleArray,x,z);
+                    
+                    verticesList.Add(GetNoiseVector(x,z));
+                    verticesList.Add(GetNoiseVector(x+1,z));
+                    verticesList.Add(GetNoiseVector(x,z+1));
+                    verticesList.Add(GetNoiseVector(x+1,z+1));
+                    
+                    trianglesList.Add(verticesList.Count-4);
+                    trianglesList.Add(verticesList.Count-2);
+                    trianglesList.Add(verticesList.Count-3);
+                    trianglesList.Add(verticesList.Count-3);
+                    trianglesList.Add(verticesList.Count-2);
+                    trianglesList.Add(verticesList.Count-1);
                 }
             }
-            return triangleArray;
+            verticesArray = verticesList.ToArray();
+            triangleArray = trianglesList.ToArray();
+            texture.Apply();
         }
 
-        private void FillVerticesTriangle(int[] triangleArray, int x,int z)
+        private Vector3 GetNoiseVector(int x, int z)
         {
-        }
-
-        private Vector3[] GetVertices()
-        {
-            verticesArray = new Vector3[size.x * size.z];
-            for (int x = 0; x < size.x; x++)
+            
+            float y = 0;
+            for (int i = 0; i < octaveCount; i++)
             {
-                for (int z = 0; z < size.y; z++)
-                {
-                    var noiseValue = Mathf.PerlinNoise(x, z);
-                    var y = noiseValue * size.y;
-                    verticesArray[Linearize2DArray(x, z)] = new Vector3(x, y, z);
-                }
+                var value = Mathf.Pow(2, i);
+                y += Mathf.PerlinNoise(x / (value * frequency), z / (value * frequency))/value;
             }
-            return verticesArray;
+            
+            texture.SetPixel(x,z,new Color(y,y,y));
+            return new Vector3(x,y* size.y, z);
         }
+        
 
-        private int Linearize2DArray(int x, int z)
-        {
-            return Mathf.FloorToInt(((x % size.x) * size.x + (z % size.z)));
-        }
+     
 
         private void Start()
         {
             map = new GameObject("Map");
             meshFilter = map.AddComponent<MeshFilter>();
-            map.AddComponent<MeshRenderer>();
+            var render = map.AddComponent<MeshRenderer>();
+            render.material = material;
         }
-        
     }
 }
