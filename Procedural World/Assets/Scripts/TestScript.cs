@@ -15,5 +15,6 @@ public class TestScript : MonoBehaviour
     {
         print("EveryFrame");
         print("more than one frame");
+        print("more one frame");
     }
 }
