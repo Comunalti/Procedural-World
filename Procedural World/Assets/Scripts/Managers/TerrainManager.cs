@@ -7,6 +7,9 @@ namespace Managers
 {
     public class TerrainManager : Singleton<TerrainManager>
     {
+    //todo: Watch and copy past Sebastian code
+    // i need to learn some marching cubes algorithm
+    //i am want to apply this algorithm here and later use some flocking algorithm
         public Material material;
         private GameObject map;
         public Vector3Int size;
