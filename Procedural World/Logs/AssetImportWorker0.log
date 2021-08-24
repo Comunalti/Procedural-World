@@ -144,3 +144,19 @@ Received Import Request.
 Start importing Assets/Images/X.png using Guid(2a64f0fae8f913e4399ae4ee9ad56e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d47e07018cec62c196b4d7843d7d89c') in 0.034265 seconds
   Import took 0.044169 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 225.876349 seconds.
+  path: Assets/Images/carinha feliz.png
+  artifactKey: Guid(58cf863c0d985164e805a6e305c3526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/carinha feliz.png using Guid(58cf863c0d985164e805a6e305c3526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eded9ba6db8a6f16938f17e20cbf5668') in 0.037827 seconds
+  Import took 0.043892 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004254 seconds.
+  path: Assets/Images/carinha feliz.png
+  artifactKey: Guid(58cf863c0d985164e805a6e305c3526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/carinha feliz.png using Guid(58cf863c0d985164e805a6e305c3526c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eded9ba6db8a6f16938f17e20cbf5668') in 0.017531 seconds
+  Import took 0.023139 seconds .
+
