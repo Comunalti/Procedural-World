@@ -120,3 +120,27 @@ Received Import Request.
 Start importing Assets/Images/X.png using Guid(2a64f0fae8f913e4399ae4ee9ad56e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a134688569952ab289bb4a610db8ae59') in 0.028855 seconds
   Import took 0.036671 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 485.094692 seconds.
+  path: Assets/Images/Certinho.png
+  artifactKey: Guid(5b37359bb60b4594096fcf4e7bf16609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Certinho.png using Guid(5b37359bb60b4594096fcf4e7bf16609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad94b617ba03217042d1711f02374858') in 0.047093 seconds
+  Import took 0.055086 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000881 seconds.
+  path: Assets/Images
+  artifactKey: Guid(707d7ea0860d4f84b9901306c1d58c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images using Guid(707d7ea0860d4f84b9901306c1d58c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bba610588c86dc602e9b77bef6b934a') in 0.010575 seconds
+  Import took 0.025764 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001902 seconds.
+  path: Assets/Images/X.png
+  artifactKey: Guid(2a64f0fae8f913e4399ae4ee9ad56e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/X.png using Guid(2a64f0fae8f913e4399ae4ee9ad56e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d47e07018cec62c196b4d7843d7d89c') in 0.034265 seconds
+  Import took 0.044169 seconds .
+
