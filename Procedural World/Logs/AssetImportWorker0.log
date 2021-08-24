@@ -96,3 +96,27 @@ Received Import Request.
 Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '446d0279febcd709313be954d69e751c') in 0.032174 seconds
   Import took 0.056786 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 57.435473 seconds.
+  path: Assets/Images
+  artifactKey: Guid(707d7ea0860d4f84b9901306c1d58c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images using Guid(707d7ea0860d4f84b9901306c1d58c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '349dfe871fc08528912b179057720feb') in 0.022101 seconds
+  Import took 0.029796 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.578449 seconds.
+  path: Assets/Images/Certinho.png
+  artifactKey: Guid(5b37359bb60b4594096fcf4e7bf16609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Certinho.png using Guid(5b37359bb60b4594096fcf4e7bf16609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ee211586c0a110de5c8b159d10a0bf7') in 0.244151 seconds
+  Import took 0.251251 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000863 seconds.
+  path: Assets/Images/X.png
+  artifactKey: Guid(2a64f0fae8f913e4399ae4ee9ad56e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/X.png using Guid(2a64f0fae8f913e4399ae4ee9ad56e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a134688569952ab289bb4a610db8ae59') in 0.028855 seconds
+  Import took 0.036671 seconds .
+
